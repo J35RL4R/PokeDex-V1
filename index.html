@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Test1 - BoozeStore Lookup</title>
+</head>
+
+<body>
+  <button id="pokemon-button">pokemon button</button>
+  <div id="images">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    //
+    $("#pokemon-button").on("click", function() {
+
+      //
+      var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin";
+
+      //
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      //
+        .then(function(response) {
+            console.log(response)
+        });
+    });
+  </script>
+</body>
+
+</html>
