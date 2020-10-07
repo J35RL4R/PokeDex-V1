@@ -1,13 +1,15 @@
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://pokemon-go1.p.rapidapi.com/pokemon_names.json",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
+		"x-rapidapi-key": "b74f32c4f3msh03893b8e16afef9p102c32jsn1de9b6fcf0a5"
+	}
+}
 
-$("#pokemon-button").on("click", function() {
-  var queryURL = "https://pokeapi.co/api/v2/pokemon/ditto";
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  })
-
-    .then(function(response) {
-        console.log(response)
-    });
+$.ajax(settings).done(function (response) {
+	console.log(response);
 });
+
