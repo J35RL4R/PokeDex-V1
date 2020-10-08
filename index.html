@@ -4,15 +4,36 @@
 <head>
   <meta charset="utf-8">
   <title>Test1 - PokeDex Draft</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
-  <input id = 'input'></input>
-    <button id="search-input">search</button>
-  </div>
-  <h4>Krista was here</h4>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile is-centered">
+        <textarea id="input"></textarea>
+        <button id="search-input">search</button>
+      </div>
+      <div class="container stats columns is-vcentered">
+          <div class="column">
+            <div class="poke-img"></div>
+          </div>
+          <div class="column is-6">
+            <div class="pokemon-name"></div>
+            <div class="pokemon-moves"></div>
+            <div class="pokemon-stats"></div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <aside>
+    <div id="local-storage-container" class="column">
+      <ul id="local-storage history"></ul>
+    </div>
+  </aside>
 </body>
-<script src ='script.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='script.js'></script>
+
 </html>
