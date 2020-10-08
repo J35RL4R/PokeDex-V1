@@ -9,30 +9,31 @@
 </head>
 
 <body>
-  <section class ="section">
-    <div class = "container">
-    <div class = "columns is-mobile is-centered">
-      <input id = "input"></input>
-      <button id="search-input">search</button>
-    </div>
-    <div class = "container stats">
-      <div class="columns is-vcentered">
-        <div id = "local-storage-container" class="column">
-          <div id = "local-storage"></div>
-        </div>
-        <div class="column">
-          <div class = "poke-img"></div>
-        </div>
-        <div class="column is-6">
-          <div class= "pokemon-name"></div>
-          <div class= "pokemon-moves"></div>
-          <div class= "pokemon-stats"></div>
-        </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile is-centered">
+        <textarea id="input"></textarea>
+        <button id="search-input">search</button>
+      </div>
+      <div class="container stats columns is-vcentered">
+          <div class="column">
+            <div class="poke-img"></div>
+          </div>
+          <div class="column is-6">
+            <div class="pokemon-name"></div>
+            <div class="pokemon-moves"></div>
+            <div class="pokemon-stats"></div>
+          </div>
       </div>
     </div>
-  </div>
   </section>
+  <aside>
+    <div id="local-storage-container" class="column">
+      <ul id="local-storage history"></ul>
+    </div>
+  </aside>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src ='script.js'></script>
+<script src='script.js'></script>
+
 </html>
