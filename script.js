@@ -42,11 +42,11 @@ $(function () {
 
         var pokemonHeight = $("<p>").text("Height: " + response.height + "in");
         console.log(response.height);
-        $(".poke-img").append(pokemonHeight);
+        $(".poke-sprite").append(pokemonHeight);
 
         var pokemonWeight = $("<p>").text("Weight: " + response.weight + "lb");
         console.log(response.weight);
-        $(".poke-img").append(pokemonWeight);
+        $(".poke-sprite").append(pokemonWeight);
 
 
         // then i want to appened abilities of pokemon
@@ -119,6 +119,7 @@ $(function () {
         $(".pokemon-stats").append(pokeStatSpeedLi)
 
         //then i want to append pokemon type
+<<<<<<< HEAD
         var pType = response.types[6].base_type;
         console.log(pType)
         var pokeType = $("<li>");
@@ -127,6 +128,14 @@ $(function () {
        
         console.log(response)
         console.log(response.species.name)
+=======
+        var pokemonType = response.types[0].type.name;
+        var pokeStatTypeLi = $('<li>');
+        pokeStatTypeLi.text( 'Type: ' +pokemonType);
+        $(".pokemon-types").append(pokeStatTypeLi)
+
+        console.log(pokemonType)
+>>>>>>> 990e40884bc04d78fb0931423a883631fbe9db26
 
         pokemonGo(pokemon);
       });
@@ -141,7 +150,7 @@ $(function () {
         var pokeImage = $("<img>");
         pokeImage.attr("src", imageUrl);
         pokeImage.attr("alt", "pokemon image")
-        $(".poke-img").append(pokeImage);
+        $(".poke-gif").append(pokeImage);
         console.log(response)
         console.log(response.data)
       });
