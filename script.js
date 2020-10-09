@@ -42,11 +42,11 @@ $(function () {
 
         var pokemonHeight = $("<p>").text("Height: " + response.height + "in");
         console.log(response.height);
-        $(".poke-img").append(pokemonHeight);
+        $(".poke-sprite").append(pokemonHeight);
 
         var pokemonWeight = $("<p>").text("Weight: " + response.weight + "lb");
         console.log(response.weight);
-        $(".poke-img").append(pokemonWeight);
+        $(".poke-sprite").append(pokemonWeight);
 
 
         // then i want to appened abilities of pokemon
@@ -68,11 +68,63 @@ $(function () {
           $(".pokemon-moves").append(pokemoves);
         }
 
-        // then i want to append stat names
-        // then i want to appened stat values
+       //pokemon sprite code:
+        var frontURL = response.sprites.front_default;
+        var pokeSpriteFront = $("<img>");
+        pokeSpriteFront.attr("src", frontURL);
+        pokeSpriteFront.attr("alt", "pokemon sprite")
+        $(".poke-sprite").append(pokeSpriteFront);
+        
+        var frontURL = response.sprites.back_default;
+        var pokeSpriteBack = $("<img>");
+        pokeSpriteBack.attr("src", frontURL);
+        pokeSpriteBack.attr("alt", "pokemon sprite")
+        $(".poke-sprite").append(pokeSpriteBack);
+
+        //pokemon stat code:
+        var pokeStatHP = response.stats[0].base_stat;
+        console.log(pokeStatHP)
+        var pokeStatHpLi = $('<li>');
+        pokeStatHpLi.text('HP: ' +pokeStatHP);
+        $(".pokemon-stats").append(pokeStatHpLi);
+
+        var pokeStatAttack = response.stats[1].base_stat;
+        console.log(pokeStatAttack)
+        var pokeStatAttackLi = $('<li>');
+        pokeStatAttackLi.text( 'Attack: ' +pokeStatAttack);
+        $(".pokemon-stats").append(pokeStatAttackLi);
+
+        var pokeStatDefense = response.stats[2].base_stat;
+        console.log(pokeStatDefense)
+        var pokeStatDefenseLi = $('<li>');
+        pokeStatDefenseLi.text( 'Defense: ' +pokeStatDefense);
+        $(".pokemon-stats").append(pokeStatDefenseLi);
+        
+        var pokeStatSpecialAttack = response.stats[3].base_stat;
+        console.log(pokeStatSpecialAttack)
+        var pokeStatSpecialAttackLi = $('<li>');
+        pokeStatSpecialAttackLi.text( 'Special Attack: ' +pokeStatSpecialAttack);
+        $(".pokemon-stats").append(pokeStatSpecialAttackLi)
+        
+        var pokeStatSpecialDefense = response.stats[4].base_stat;
+        console.log(pokeStatSpecialDefense)
+        var pokeStatSpecialDefenseLi = $('<li>');
+        pokeStatSpecialDefenseLi.text( 'Attack: ' +pokeStatSpecialDefense);
+        $(".pokemon-stats").append(pokeStatSpecialDefenseLi)
+
+        var pokeStatSpeed = response.stats[5].base_stat;
+        console.log(pokeStatSpeed)
+        var pokeStatSpeedLi = $('<li>');
+        pokeStatSpeedLi.text( 'Speed: ' +pokeStatSpeed);
+        $(".pokemon-stats").append(pokeStatSpeedLi)
+
         //then i want to append pokemon type
-        console.log(response)
-        console.log(response.species.name)
+        var pokemonType = response.types[0].type.name;
+        var pokeStatTypeLi = $('<li>');
+        pokeStatTypeLi.text( 'Type: ' +pokemonType);
+        $(".pokemon-types").append(pokeStatTypeLi)
+
+        console.log(pokemonType)
 
         
       });
@@ -87,7 +139,7 @@ $(function () {
         var pokeImage = $("<img>");
         pokeImage.attr("src", imageUrl);
         pokeImage.attr("alt", "pokemon image")
-        $(".poke-img").append(pokeImage);
+        $(".poke-gif").append(pokeImage);
         console.log(response)
         console.log(response.data)
       });
