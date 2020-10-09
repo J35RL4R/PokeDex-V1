@@ -121,7 +121,7 @@ $(function () {
         //then i want to append pokemon type
         var pType = response.types[6].base_type;
         console.log(pType)
-        var pokeType = $("<p>");
+        var pokeType = $("<li>");
         pokeType.text("Type: " + pType);
         $(".pokemon-type").append(pokeType)
        
