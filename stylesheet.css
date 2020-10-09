@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(218, 19, 50);
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+  }
+  
+.container {
+    padding: 40px;
+    margin: 0 auto;
+  }
+  
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 54px;
+  }
+
+textarea{
+    background: black;
+    border: none;
+    color: white;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+
+}
+  
+  .column {
+      margin: auto;
+    width: 50%;
+    padding: 10px;
+    justify-content: center ;
+  }
+  .stats {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    justify-content: center 
+  }
