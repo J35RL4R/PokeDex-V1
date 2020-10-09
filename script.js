@@ -74,7 +74,7 @@ $(function () {
         console.log(response)
         console.log(response.species.name)
 
-        pokemonGo(pokemon);
+        
       });
 
     $.ajax({
@@ -91,7 +91,8 @@ $(function () {
         console.log(response)
         console.log(response.data)
       });
-
+    
+      pokemonGo(pokemon);
 
   };
 
@@ -111,8 +112,9 @@ $(function () {
   
     $.ajax(settings).done(function (response) {
       console.log(response);
-  
- 
+
+      console.log(response[0].pokemon_name);
+      console.log(response.filter(pokemonGo=>pokemonGo.pokemon_name === pokemon));
   
     });
   }
