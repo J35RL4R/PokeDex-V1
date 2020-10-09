@@ -13,68 +13,8 @@ $(function () {
     //var pokeDescription = "https://pokeapi.co/api/v2/characteristic/" + pokeid;
     var pokeGif = "https://api.giphy.com/v1/gifs/search?api_key=I4lc5z5Pjva79mvZq3suogFUfDYu5RbM&q=" + pokemon; "&limit=1&offset=0&rating=g&lang=en";
 
-<<<<<<< HEAD
-    function pokemonApp() {
-
-      console.log(pokeGame);
-      console.log(pokemon);
-
-      $.ajax({
-        url: pokeGame,
-        method: "GET"
-      })
-
-        .then(function (response) {
-
-          console.log(response)
-
-          if (!(history.includes(pokemon))) {
-            history.push(pokemon);
-            localStorage.setItem("history", JSON.stringify(history));
-            historyRow(pokemon);
-          }
-
-
-          var pokeName = response.species.name;
-          var pokeHeader = $("<h1>");
-          pokeHeader.text(pokeName);
-          $(".pokemon-name").append(pokeHeader);
-          
-          "https://pokeapi.co/api/v2/type/" + pokeid;
-          var pokeType = response.species.type;
-          var pType = $("<p>");
-          pType.text(pokeType)
-          $(".pokemon-type").append(pType);
-      
-          // then i want to appened description of pokemon
-          // then i want to append top 5 moves to page
-          // then i want to append stat names
-          // then i want to appened stat values
-          //then i want to append pokemon type
-          
-          
-      
-          console.log(response)
-          console.log(response.species.name)
-        });
-      $.ajax({
-        url: pokeGif,
-        method: "GET"
-      })
-
-        .then(function (response) {
-          var imageUrl = response.data[1].images.original.url;
-          var pokeImage = $("<img>");
-          pokeImage.attr("src", imageUrl);
-          pokeImage.attr("alt", "pokemon image")
-          $(".poke-img").append(pokeImage);
-          console.log(response)
-          console.log(response.data)
-        });
-=======
     console.log(pokeGame);
     console.log(pokemon);
->>>>>>> d9fd6e413965937c57ecb90892ef3e49c15c6c26
 
     $.ajax({
       url: pokeGame,
@@ -179,6 +119,11 @@ $(function () {
         $(".pokemon-stats").append(pokeStatSpeedLi)
 
         //then i want to append pokemon type
+        var pType = response.type[6].types;
+        var pokeType = $("<p>");
+        pokeType.text("Type: " + pType);
+        $(".pokemon-type").append(pokeType);
+       
         console.log(response)
         console.log(response.species.name)
 
