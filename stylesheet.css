@@ -17,9 +17,9 @@ h1 {
   }
 
 textarea{
-    background: black;
+    background: white;
     border: none;
-    color: white;
+    color: black;
     border: 1px solid black;
     width: 300px;
     height: 40px;
