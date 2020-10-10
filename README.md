@@ -12,10 +12,10 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 <img src="" alt="showing GIFs, Sprite Image, and other information">
 
 ## Built With
-[Bulma](https://bulma.io/) - The Web CSS framework used
-[RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Pokemon Stats, Type, Moves, etc. used
-[Giphy API]() - 
-[PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the Pokemon (Abilities, Moves, Height, Weight,etc.)
+* [Bulma](https://bulma.io/) - The Web CSS framework used
+* [RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Pokemon Stats, Type, Moves, etc. used
+* [Giphy API](https://developers.giphy.com/) - 
+* [PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the Pokemon (Abilities, Moves, Height, Weight,etc.)
 
 ## Contributors
 * **Jesse Larsen**
