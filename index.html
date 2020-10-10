@@ -4,62 +4,51 @@
 <head>
   <meta charset="utf-8">
   <title>Test1 - PokeDex Draft</title>
+  <link rel="stylesheet" href="cssreset.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
-  <section class="hero is-danger is-fullheight">
-    <div class="hero-head">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <a class="navbar-item">
-              <img src="images/Pokédex_logo.webp" alt="Logo">
-            </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-        </div>
-      </nav>
+
+    <div>
+        <img src="https://qmdnsg.dm.files.1drv.com/y4mFNt5kjOgSpQ_LgltSWy9--yQrQNXeF7crrsdTLG-DVZzYJucdHaVIjQMJ8Vfxe-CFyF23cxJKEq-Ph4w0PXWL8ktw_T-8eP9_xKUA-1j-zCzTdHVjpjPa4PvO6kjMi3uz5Q1sBwgavzBKAaTooF167ED72c59K5w2suKRENXzlFfWj_MJudc8UcxRqkabLumsR5PfzyGUeqJCre_UXMHVg?height=246&cropmode=none" width="100%"alt="PokeDex">
     </div>
+ 
 
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <p class="title">
-          Pokemon GIFs with Stats!
-        </p>
-        <p class="subtitle">
-          Type the name of Pokemon
-        </p>
+  <div class = "header">
+    <center><img src="https://cdn.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png" alt="PokeDex Logo"></center>
+  </div>
 
-        <div class="container">
-          <div class="columns is-mobile is-centered">
-            <textarea id="input"></textarea>
-            <button class="button is-rounded" id="search-input">search</button>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-mobile is-centered">
+        <textarea id="input"></textarea>
+        <button id="search-input" class = "button is-info">Search</button>
+      </div>
+
+      <div class="container stats columns is-vcentered" id="pokemon-card">
+          <div class="column">
+            <div class = "row">
+              <div class="pokemon-name"></div>
+              <div class = "poke-sprite"></div>
+              <div class = "poke-gif"></div>
           </div>
-          <div class="container stats columns is-vcentered">
-              <div class="column">
-                <div class="poke-img"></div>
-              </div>
-              <div class="column is-6">
-                <div class="pokemon-name"></div>
-                <div class="pokemon-moves"></div>
-                <div class="pokemon-stats"></div>
-              </div>
+          <div class="column is-6">
+            <div class="pokemon-height"></div>
+            <div class="pokemon-abilities"></div>
+            <div class="pokemon-moves"></div>
+            <ul class="pokemon-stats"></ul>
+            <ul class="pokemon-types"></ul>
           </div>
-        </div>
-      
-      </section>
-        <aside>
-          <div id="local-storage-container" class="column">
-            <ul id="local-storage history"></ul>
-          </div>
-        </aside>
-      
+      </div>
+    </div>
+  </section>
+  <aside>
+    <div id="local-storage-container" class="column">
+      <ul id="local-storage history"></ul>
+    </div>
+  </aside>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='script.js'></script>
