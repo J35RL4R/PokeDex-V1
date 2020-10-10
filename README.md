@@ -7,3 +7,5 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 Main Page
 <img src="images/PokeDex Main 01.jpg" alt="PokeDex Main Page">
 
+Pokemon Search
+<img src="" alt="showing GIFs, Sprite Image, and other information">
