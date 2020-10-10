@@ -119,23 +119,12 @@ $(function () {
         $(".pokemon-stats").append(pokeStatSpeedLi)
 
         //then i want to append pokemon type
-<<<<<<< HEAD
-        var pType = response.types[6].base_type;
-        console.log(pType)
-        var pokeType = $("<li>");
-        pokeType.text("Type: " + pType);
-        $(".pokemon-type").append(pokeType)
-       
-        console.log(response)
-        console.log(response.species.name)
-=======
         var pokemonType = response.types[0].type.name;
         var pokeStatTypeLi = $('<li>');
         pokeStatTypeLi.text( 'Type: ' +pokemonType);
         $(".pokemon-types").append(pokeStatTypeLi)
 
         console.log(pokemonType)
->>>>>>> 990e40884bc04d78fb0931423a883631fbe9db26
 
         pokemonGo(pokemon);
       });
