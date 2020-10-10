@@ -13,9 +13,9 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 
 ## Built With
 * [Bulma](https://bulma.io/) - The Web CSS framework used
-* [RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Pokemon Stats, Type, Moves, etc. used
+* [RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Database detailing  about PokemonGo game (Stats, Type, Moves, etc.)
 * [Giphy API](https://developers.giphy.com/) - 
-* [PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the Pokemon (Abilities, Moves, Height, Weight,etc.)
+* [PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the General Pokemon game series.
 
 ## Contributors
 * **Jesse Larsen**
