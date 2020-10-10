@@ -20,7 +20,7 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 * [PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the General Pokemon game series.
 
 ## Contributors
-* **Jesse Larsen**
-* **Krista Meiers**
-* **Brandon Ryu**
-* **Jarrett Williams**
+* **Jesse Larsen** - the project reviewer who worked on the javascript, HTML, and Bulma
+* **Krista Meiers** - the project coordinator, who worked on the javascript, and css.
+* **Brandon Ryu** - worked on the CSS, and Bulma
+* **Jarrett Williams** - worked on the Javascript, and HTML
