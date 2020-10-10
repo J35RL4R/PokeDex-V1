@@ -5,16 +5,17 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 ## Description
 
 [View the deployed web application.]()
+The first step to creating the PokeDex Application was to build an HTML 
 
 ## PokeDex Application Screen Shot
-#### Main Page
+#### Homepage
 <img src="images/PokeDex Main 01.jpg" alt="PokeDex Main Page">
 
 #### Pokemon Search
 <img src="" alt="showing GIFs, Sprite Image, and other information">
 
 ## Built With
-* [Bulma](https://bulma.io/) - The Web CSS framework used
+* [Bulma](https://bulma.io/) - The Open Source CSS framework used
 * [RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Database detailing about PokemonGo game (Stats, Type, Moves, etc.)
 * [Giphy API](https://developers.giphy.com/) - Pokemon GIFs used
 * [PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the General Pokemon game series.
