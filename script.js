@@ -3,9 +3,9 @@ $(function () {
   $("#search-input").on("click", function () {
     var pokemon = $("#input").val().toLowerCase().trim();
     pokemonApp(pokemon);
-    
-    
-  })  
+
+
+  })
 
   function pokemonApp(pokemon) {
 
@@ -23,30 +23,27 @@ $(function () {
 
       .then(function (response) {
 
-        console.log(response)
+        console.log(response);
 
-        if (!(history.includes(pokemon))) {
-          history.push(pokemon);
-          localStorage.setItem("history", JSON.stringify(history));
-          historyRow(pokemon);
-        }
+        $("#pokemon-card").addClass("card");
 
 
         var pokeName = response.species.name;
         var pokeHeader = $("<h1>");
         pokeHeader.text(pokeName);
+        pokeHeader.addClass("title")
         $(".pokemon-name").append(pokeHeader);
 
 
         // pokemon height and weight          
 
-        var pokemonHeight = $("<p>").text("Height: " + response.height + "in");
+        var pokemonHeight = $("<p>").text("Height: " + response.height + "ft");
         console.log(response.height);
-        $(".poke-sprite").append(pokemonHeight);
+        $(".pokemon-height").append(pokemonHeight);
 
         var pokemonWeight = $("<p>").text("Weight: " + response.weight + "lb");
         console.log(response.weight);
-        $(".poke-sprite").append(pokemonWeight);
+        $(".pokemon-height").append(pokemonWeight);
 
 
         // then i want to appened abilities of pokemon
@@ -68,13 +65,15 @@ $(function () {
           $(".pokemon-moves").append(pokemoves);
         }
 
-       //pokemon sprite code:
+        //pokemon sprite code:
+
+        $(".poke-sprite").addClass("card");
         var frontURL = response.sprites.front_default;
         var pokeSpriteFront = $("<img>");
         pokeSpriteFront.attr("src", frontURL);
-        pokeSpriteFront.attr("alt", "pokemon sprite")
+        pokeSpriteFront.attr("alt", "pokemon sprite");
         $(".poke-sprite").append(pokeSpriteFront);
-        
+
         var frontURL = response.sprites.back_default;
         var pokeSpriteBack = $("<img>");
         pokeSpriteBack.attr("src", frontURL);
@@ -85,48 +84,48 @@ $(function () {
         var pokeStatHP = response.stats[0].base_stat;
         console.log(pokeStatHP)
         var pokeStatHpLi = $('<li>');
-        pokeStatHpLi.text('HP: ' +pokeStatHP);
+        pokeStatHpLi.text('HP: ' + pokeStatHP);
         $(".pokemon-stats").append(pokeStatHpLi);
 
         var pokeStatAttack = response.stats[1].base_stat;
         console.log(pokeStatAttack)
         var pokeStatAttackLi = $('<li>');
-        pokeStatAttackLi.text( 'Attack: ' +pokeStatAttack);
+        pokeStatAttackLi.text('Attack: ' + pokeStatAttack);
         $(".pokemon-stats").append(pokeStatAttackLi);
 
         var pokeStatDefense = response.stats[2].base_stat;
         console.log(pokeStatDefense)
         var pokeStatDefenseLi = $('<li>');
-        pokeStatDefenseLi.text( 'Defense: ' +pokeStatDefense);
+        pokeStatDefenseLi.text('Defense: ' + pokeStatDefense);
         $(".pokemon-stats").append(pokeStatDefenseLi);
-        
+
         var pokeStatSpecialAttack = response.stats[3].base_stat;
         console.log(pokeStatSpecialAttack)
         var pokeStatSpecialAttackLi = $('<li>');
-        pokeStatSpecialAttackLi.text( 'Special Attack: ' +pokeStatSpecialAttack);
+        pokeStatSpecialAttackLi.text('Special Attack: ' + pokeStatSpecialAttack);
         $(".pokemon-stats").append(pokeStatSpecialAttackLi)
-        
+
         var pokeStatSpecialDefense = response.stats[4].base_stat;
         console.log(pokeStatSpecialDefense)
         var pokeStatSpecialDefenseLi = $('<li>');
-        pokeStatSpecialDefenseLi.text( 'Attack: ' +pokeStatSpecialDefense);
+        pokeStatSpecialDefenseLi.text('Attack: ' + pokeStatSpecialDefense);
         $(".pokemon-stats").append(pokeStatSpecialDefenseLi)
 
         var pokeStatSpeed = response.stats[5].base_stat;
         console.log(pokeStatSpeed)
         var pokeStatSpeedLi = $('<li>');
-        pokeStatSpeedLi.text( 'Speed: ' +pokeStatSpeed);
+        pokeStatSpeedLi.text('Speed: ' + pokeStatSpeed);
         $(".pokemon-stats").append(pokeStatSpeedLi)
 
         //then i want to append pokemon type
         var pokemonType = response.types[0].type.name;
         var pokeStatTypeLi = $('<li>');
-        pokeStatTypeLi.text( 'Type: ' +pokemonType);
+        pokeStatTypeLi.text('Type: ' + pokemonType);
         $(".pokemon-types").append(pokeStatTypeLi)
 
         console.log(pokemonType)
 
-        pokemonGo(pokemon);
+
       });
 
     $.ajax({
@@ -144,12 +143,13 @@ $(function () {
         console.log(response.data)
       });
 
+    pokemonGo(pokemon);
 
   };
 
 
 
-  function pokemonGo(pokemon){
+  function pokemonGo(pokemon) {
     var settings = {
       "async": true,
       "crossDomain": true,
@@ -160,37 +160,14 @@ $(function () {
         "x-rapidapi-key": "b74f32c4f3msh03893b8e16afef9p102c32jsn1de9b6fcf0a5"
       }
     }
-  
+
     $.ajax(settings).done(function (response) {
       console.log(response);
-  
- 
-  
+
+      console.log(response[0].pokemon_name);
+      console.log(response.filter(pokemonGo => pokemonGo.pokemon_name === pokemon));
+
     });
-  }
-
-
-  var history = JSON.parse(localStorage.getItem("history")) || [];
-  console.log(history);
-
-  if (history.length >= 0) {
-    pokemonApp(history[history.length - 1]);
-  }
-
-  for (var i = 0; i < history.length; i++) {
-    historyRow(history[i]);
-
-  }
-
-  $("#local-storage").on("click", "button", function () {
-    var pokemon1 = $(this).text().trim();
-    pokemonApp(pokemon1);
-  })
-
-  function historyRow(text) {
-    var listitem = $("<button>").text(text);
-    listitem.addClass("button is-warning");
-    $("#local-storage").append(listitem);
   }
 });
 
