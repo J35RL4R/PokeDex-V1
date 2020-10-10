@@ -1,6 +1,10 @@
 # Project-PokeDex
-General Description
+## General Description
 This is a simple PokeDex aapplication that allows a user to search for any Pokemon. When users search a pokemon, Pokemon's GIF and sprite image would show. Also Pokemon's information will appear on the application page. This app will run in the browser and feature dynamically updated HTML and Bulma CSS framework powered by JavaScript code. 
+
+## Description
+
+
 
 ## PokeDex Application Screen Shot
 [View the deployed web application.]()
