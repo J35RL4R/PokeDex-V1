@@ -4,11 +4,9 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 
 ## Description
 
-
-
-## PokeDex Application Screen Shot
 [View the deployed web application.]()
 
+## PokeDex Application Screen Shot
 #### Main Page
 <img src="images/PokeDex Main 01.jpg" alt="PokeDex Main Page">
 
@@ -17,8 +15,8 @@ This is a simple PokeDex aapplication that allows a user to search for any Pokem
 
 ## Built With
 * [Bulma](https://bulma.io/) - The Web CSS framework used
-* [RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Database detailing  about PokemonGo game (Stats, Type, Moves, etc.)
-* [Giphy API](https://developers.giphy.com/) - 
+* [RapidAPI](https://rapidapi.com/chewett/api/pokemon-go1) - Database detailing about PokemonGo game (Stats, Type, Moves, etc.)
+* [Giphy API](https://developers.giphy.com/) - Pokemon GIFs used
 * [PokeAPI](https://pokeapi.co/) - Extensive database detailing everything about the General Pokemon game series.
 
 ## Contributors
