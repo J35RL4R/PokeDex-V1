@@ -5,7 +5,9 @@ This is a simple PokeDex application that allows a user to search for any Pokemo
 ## Description
 * **[View the deployed PokeDex application]()**
 
-The first step to create the PokeDex Application was to build an HTML outline. The important element was building the textarea input, search button and local storage container. Using JQuery,   
+The first step to create the PokeDex Application was to build an HTML outline. The important element was building the textarea input, search button and local storage container. Bulma, the open source CSS framework, was used in section, div containers, columns, textareas, and button to repsonsive page for any device. 
+
+The final step to completing Pokedex project was adding Local Storage. The Local Storage is set 
 
 ## PokeDex Application Screen Shot
 #### Homepage
