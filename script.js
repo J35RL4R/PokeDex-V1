@@ -1,7 +1,7 @@
 $(function () {
 
-  $("#search-input").click(function (e) {
-    e.preventDefault()
+  $("#search-input").click(function (event) {
+    event.preventDefault()
     var pokemon = $("#input").val().toLowerCase().trim();
     pokemonApp(pokemon);
     $('div').removeClass('hide');
@@ -12,6 +12,7 @@ $(function () {
   function pokemonApp(pokemon) {
 
     var pokeGame = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+
     var pokeGif = "https://api.giphy.com/v1/gifs/search?api_key=I4lc5z5Pjva79mvZq3suogFUfDYu5RbM&q=" + pokemon; "&limit=1&offset=0&rating=g&lang=en";
 
     console.log(pokeGame);
@@ -155,12 +156,13 @@ $(function () {
 
   var history = JSON.parse(localStorage.getItem("history")) || [];
   console.log(history);
-  if (history.length >= 0) {
-    pokemonApp(history[history.length - 1]);
-  }
+ // Cause of auto populate bug
+  //if (history.length >= 0) {
+   // pokemonApp(history[history.length - 1]);
+  //}
   for (var i = 0; i < history.length; i++) {
     historyRow(history[i]);
-  }
+  } 
   $("#history").on("click", "button", function () {
     var pokemonSaved = $(this).text().trim();
     pokemonApp(pokemonSaved);
@@ -168,7 +170,8 @@ $(function () {
   })
   function historyRow(text) {
     var listitem = $("<button>").text(text);
-    listitem.addClass("button is-warning");
+    listitem.addClass("button");
+    listitem.addClass("is-warning");
     $("#history").append(listitem);
   }
 
