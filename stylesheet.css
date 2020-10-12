@@ -1,15 +1,25 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: rgb(218, 19, 50);
+}
 .header{
-    
   display: flex; 
   align-items: center; 
   justify-content: center; 
 }
+.pokedex-logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .search-box, .returned-info {
   display: flex;
   justify-content: center;
+
 }
 ul li { 
   display:block;
@@ -19,20 +29,6 @@ p {
   display:inline;
  }
  
- body{
-  background-color: rgb(218, 19, 50);
-  margin: 0;
-  font-family: 'Rubik', sans-serif;
-  color: white;
-  height: 100%;
-}
-html{
-  margin:0;
-  padding:0;
-  max-height:100vh;
-  overflow:hidden;
-}
-
 .pokemon-name {
   text-transform: uppercase;
 }

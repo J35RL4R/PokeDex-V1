@@ -1,17 +1,17 @@
 $(function () {
 
-  $("#search-input").on("click", function () {
+  $("#search-input").click(function (e) {
+    e.preventDefault()
     var pokemon = $("#input").val().toLowerCase().trim();
     pokemonApp(pokemon);
     $('div').removeClass('hide');
 
 
   })
-
+  
   function pokemonApp(pokemon) {
 
     var pokeGame = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
-    //var pokeDescription = "https://pokeapi.co/api/v2/characteristic/" + pokeid;
     var pokeGif = "https://api.giphy.com/v1/gifs/search?api_key=I4lc5z5Pjva79mvZq3suogFUfDYu5RbM&q=" + pokemon; "&limit=1&offset=0&rating=g&lang=en";
 
     console.log(pokeGame);
@@ -192,36 +192,36 @@ $(function () {
       console.log(response[0].form);
       for (var i = 0; i < 1122; i++) {
         if (response[i].form === "Normal" && response[i].pokemon_name.toLowerCase() === pokemon) {
-          var pokeGoNormal = $("<h2>").text("Pokemon Go Normal Stats");
+          var pokeGoNormal = $("<h5>").text("Pokemon Go Normal Stats");
           $(".pokemonGo-Normal").append(pokeGoNormal);
-          var pokemonGoAttacks = $("<p>").text("Base Attack: " + response[i].base_attack);
+          var pokemonGoAttacks = $("<li>").text("Base Attack: " + response[i].base_attack);
           console.log(pokemonGoAttacks);
           $(".pokemonGo-Normal").append(pokemonGoAttacks);
-          var pokemonGoDefense = $("<p>").text("Base Defense: " + response[i].base_defense);
+          var pokemonGoDefense = $("<li>").text("Base Defense: " + response[i].base_defense);
           console.log(pokemonGoDefense);
           $(".pokemonGo-Normal").append(pokemonGoDefense);
-          var pokemonGoStamina = $("<p>").text("Base Stamina: " + response[i].base_stamina);
+          var pokemonGoStamina = $("<li>").text("Base Stamina: " + response[i].base_stamina);
           console.log(pokemonGoStamina);
           $(".pokemonGo-Normal").append(pokemonGoStamina);
         }
         else if (response[i].form === "Purified" && response[i].pokemon_name.toLowerCase() === pokemon) {
-          var pokeGoPurified = $("<h2>").text("Pokemon Go Purified Stats");
+          var pokeGoPurified = $("<h5>").text("Pokemon Go Purified Stats");
           $(".pokemonGo-Purified").append(pokeGoPurified);
-          var pokemonGoPurified_Attacks = $("<p>").text("Base Attack: " + response[i].base_attack);
+          var pokemonGoPurified_Attacks = $("<li>").text("Base Attack: " + response[i].base_attack);
           $(".pokemonGo-Purified").append(pokemonGoPurified_Attacks);
-          var pokemonGoPurified_Defense = $("<p>").text("Base Defense: " + response[i].base_defense);
+          var pokemonGoPurified_Defense = $("<li>").text("Base Defense: " + response[i].base_defense);
           $(".pokemonGo-Purified").append(pokemonGoPurified_Defense);
-          var pokemonGoPurified_Stamina = $("<p>").text("Base Stamina: " + response[i].base_stamina);
+          var pokemonGoPurified_Stamina = $("<li>").text("Base Stamina: " + response[i].base_stamina);
           $(".pokemonGo-Purified").append(pokemonGoPurified_Stamina);
         }
         else if (response[i].form === "Shadow" && response[i].pokemon_name.toLowerCase() === pokemon) {
-          var pokeGoShadow = $("<h2>").text("Pokemon Go Shadow Stats");
+          var pokeGoShadow = $("<h5>").text("Pokemon Go Shadow Stats");
           $(".pokemonGo-Shadow").append(pokeGoShadow);
-          var pokemonGoShadow_Attacks = $("<p>").text("Base Attack: " + response[i].base_attack);
+          var pokemonGoShadow_Attacks = $("<li>").text("Base Attack: " + response[i].base_attack);
           $(".pokemonGo-Shadow").append(pokemonGoShadow_Attacks);
-          var pokemonGoShadow_Defense = $("<p>").text("Base Defense: " + response[i].base_defense);
+          var pokemonGoShadow_Defense = $("<li>").text("Base Defense: " + response[i].base_defense);
           $(".pokemonGo-Shadow").append(pokemonGoShadow_Defense);
-          var pokemonGoShadow_Stamina = $("<p>").text("Base Stamina: " + response[i].base_stamina);
+          var pokemonGoShadow_Stamina = $("<li>").text("Base Stamina: " + response[i].base_stamina);
           $(".pokemonGo-Shadow").append(pokemonGoShadow_Stamina);
         }
         else { };
