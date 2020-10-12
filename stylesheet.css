@@ -21,17 +21,20 @@ html, body {
   justify-content: center;
 
 }
-ul li { 
-  display:block;
-}
-p {
-  margin: 0;
-  display:inline;
- }
- 
 .pokemon-name {
   text-transform: uppercase;
+  font-size: 2vw;
 }
 .hide {
   display: none
 }
+li { 
+  display:block;
+  font-size: 2vmin;
+}
+p {
+  margin: 0;
+  font-size: 2vmin;
+  display:inline;
+ }
+
