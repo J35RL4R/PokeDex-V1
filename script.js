@@ -9,19 +9,20 @@ $(function () {
 
 
   })
-  
-  function clearData(){
+
+  function clearData() {
     $('.pokemon-name').empty();
-    $('.pokemon-types').empty(); 
+    $('.pokemon-types').empty();
     $('.pokemon-height').empty();
-    $('.pokemon-stats').empty(); 
+    $('.pokemon-stats').empty();
     $('.pokemon-moves').empty();
     $('.pokemon-abilities').empty();
-    $('.pokemonGo-Normal').empty(); 
-    $('.pokemonGo-Shadow').empty(); 
+    $('.pokemonGo-Normal').empty();
+    $('.pokemonGo-Shadow').empty();
     $('.pokemonGo-Purified').empty();
     $('.poke-sprite').empty();
-    $('.poke-gif').empty();    
+    $('.poke-gif').empty();
+    $('.pokemonGo-Evolution').empty();
   }
   function pokemonApp(pokemon) {
 
@@ -165,18 +166,19 @@ $(function () {
       });
 
     pokemonGo(pokemon);
+    pokemonEvolutions(pokemon);
 
   };
 
   var history = JSON.parse(localStorage.getItem("history")) || [];
   console.log(history);
- // Cause of auto populate bug
+  // Cause of auto populate bug
   //if (history.length >= 0) {
-   // pokemonApp(history[history.length - 1]);
+  // pokemonApp(history[history.length - 1]);
   //}
   for (var i = 0; i < history.length; i++) {
     historyRow(history[i]);
-  } 
+  }
   $("#history").on("click", "button", function () {
     clearData()
     var pokemonSaved = $(this).text().trim();
@@ -208,6 +210,7 @@ $(function () {
       console.log(pokemon);
       console.log(response[0].pokemon_name);
       console.log(response[0].form);
+
       for (var i = 0; i < 1122; i++) {
         if (response[i].form === "Normal" && response[i].pokemon_name.toLowerCase() === pokemon) {
           var pokeGoNormal = $("<h5>").text("Pokemon Go Normal Stats");
@@ -250,4 +253,41 @@ $(function () {
 
   }
 
+  function pokemonEvolutions(pokemon) {
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://pokemon-go1.p.rapidapi.com/pokemon_evolutions.json",
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
+        "x-rapidapi-key": "b74f32c4f3msh03893b8e16afef9p102c32jsn1de9b6fcf0a5"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      console.log(response[0].evolutions[0].candy_required);
+      console.log(response[0].form);
+      console.log(response[0].evolutions[0].pokemon_name)
+      console.log("evolution workings");
+
+      for (var i = 0; i < 509; i++)
+      if (response[i].form === "Normal" && response[i].pokemon_name.toLowerCase() === pokemon) {
+        //console.log(response[0].pokemon_name);
+        //console.log(response[i].evolutions[i].candy_required);
+        //console.log(response[i].evolutions[i].pokemon_name);
+
+        var pokeGoEvolutionTitle = $("<h5>").text("Pokemon Go Evolution Stats");
+        $(".pokemonGo-Evolution").append(pokeGoEvolutionTitle);
+        console.log(response[i].evolutions[0])
+        var pokemonGoEvolutionCandy = $("<li>").text("Candy Required: " + response[i].evolutions[0].candy_required);
+        var pokemonGoEvolution = $("<li>").text("Evole to: " + response[i].evolutions[0].pokemon_name);
+        console.log(pokemonGoEvolution);
+        $(".pokemonGo-Evolution").append(pokemonGoEvolutionCandy, pokemonGoEvolution);
+      }
+      else {};
+    })
+  }
+  
 });
