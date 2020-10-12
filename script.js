@@ -23,6 +23,7 @@ $(function () {
     $('.poke-sprite').empty();
     $('.poke-gif').empty();
     $('.pokemonGo-Evolution').empty();
+    $('.pokemonToEve').empty();
   }
   function pokemonApp(pokemon) {
 
@@ -278,13 +279,14 @@ $(function () {
         //console.log(response[i].evolutions[i].candy_required);
         //console.log(response[i].evolutions[i].pokemon_name);
 
-        var pokeGoEvolutionTitle = $("<h5>").text("Pokemon Go Evolution Stats");
+        var pokeGoEvolutionTitle = $("<h6>").text("Candy Required to Evolve:");
         $(".pokemonGo-Evolution").append(pokeGoEvolutionTitle);
         console.log(response[i].evolutions[0])
-        var pokemonGoEvolutionCandy = $("<li>").text("Candy Required: " + response[i].evolutions[0].candy_required);
-        var pokemonGoEvolution = $("<li>").text("Evole to: " + response[i].evolutions[0].pokemon_name);
+        var pokemonGoEvolutionCandy = $("<p>").text(response[i].evolutions[0].candy_required);
+        var pokemonGoEvolution = $("<p>").text("Evolves into: " + response[i].evolutions[0].pokemon_name);
         console.log(pokemonGoEvolution);
-        $(".pokemonGo-Evolution").append(pokemonGoEvolutionCandy, pokemonGoEvolution);
+        $(".pokemonGo-Evolution").append(pokemonGoEvolutionCandy);
+        $(".pokemonToEve").append( pokemonGoEvolution);
       }
       else {};
     })

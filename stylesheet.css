@@ -1,40 +1,39 @@
 *, *::before, *::after {
-  box-sizing: border-box;
-}
-html, body {
-  margin: 0;
-  height: 100%;
-  background-color: rgb(218, 19, 50);
-}
-.header{
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-}
-.pokedex-logo{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.search-box, .returned-info {
-  display: flex;
-  justify-content: center;
-
-}
-.pokemon-name {
-  text-transform: uppercase;
-  font-size: 2vw;
-}
-.hide {
-  display: none
-}
-li { 
-  display:block;
-  font-size: 2vmin;
-}
-p {
-  margin: 0;
-  font-size: 2vmin;
-  display:inline;
- }
-
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    height: 100%;
+    background-color: rgb(218, 19, 50);
+  }
+  .header{
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  .pokedex-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .search-box, .returned-info {
+    display: flex;
+    justify-content: center;
+  
+  }
+  .pokemon-name {
+    text-transform: uppercase;
+    font-size: 2vw;
+  }
+  .hide {
+    display: none
+  }
+  li { 
+    display:block;
+    font-size: 2vmin;
+  }
+  p {
+    margin: 0;
+    font-size: 2vmin;
+    display:inline;
+   }
