@@ -2,6 +2,7 @@ $(function () {
 
   $("#search-input").click(function (event) {
     event.preventDefault()
+    clearData();
     var pokemon = $("#input").val().toLowerCase().trim();
     pokemonApp(pokemon);
     $('div').removeClass('hide');
@@ -9,6 +10,19 @@ $(function () {
 
   })
   
+  function clearData(){
+    $('.pokemon-name').empty();
+    $('.pokemon-types').empty(); 
+    $('.pokemon-height').empty();
+    $('.pokemon-stats').empty(); 
+    $('.pokemon-moves').empty();
+    $('.pokemon-abilities').empty();
+    $('.pokemonGo-Normal').empty(); 
+    $('.pokemonGo-Shadow').empty(); 
+    $('.pokemonGo-Purified').empty();
+    $('.poke-sprite').empty();
+    $('.poke-gif').empty();    
+  }
   function pokemonApp(pokemon) {
 
     var pokeGame = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
@@ -164,6 +178,7 @@ $(function () {
     historyRow(history[i]);
   } 
   $("#history").on("click", "button", function () {
+    clearData()
     var pokemonSaved = $(this).text().trim();
     pokemonApp(pokemonSaved);
     $('div').removeClass('hide');
