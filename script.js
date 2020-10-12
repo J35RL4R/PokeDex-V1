@@ -126,7 +126,7 @@ $(function () {
 
         //then i want to append pokemon type
         var pokemonType = response.types[0].type.name;
-        var pokeStatTypeLi = $('<li>');
+        var pokeStatTypeLi = $('<p>');
         pokeStatTypeLi.text('Type: ' + pokemonType);
         $(".pokemon-types").append(pokeStatTypeLi)
 
