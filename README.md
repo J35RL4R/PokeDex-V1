@@ -18,6 +18,8 @@ After ensuring all our APIs were calling correctly, we worked on formatting the 
 
 Finally, we worked on adding local storage so that the user is able to easily select a previously searched pokemon. To match the original PokeDex, the previous pokemon show up as yellow buttons above the card. 
 
+Once we pushed the final elements to the live site, we found that we were experiencing issues with the PokemomGo information not showing up on the webpage. We were being denied due to CORS. After some research, we added the following extension to our Google Chrome - https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf/related?hl=en - and our website information from the PokemonGo appeared again. 
+
 
 
 ## PokeDex Application Screen Shot
