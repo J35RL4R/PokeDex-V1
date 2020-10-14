@@ -171,3 +171,6 @@ $(function () {
   }
 });
 
+function clearAll() {
+
+}
